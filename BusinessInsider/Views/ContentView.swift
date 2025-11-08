@@ -22,7 +22,7 @@ struct ContentView: View {
             ],
             author: "Katie Balevic",
             timeAgo: "12 hrs ago",
-            imageName: "logo"
+            imageName: "Heading"
         ),
         NewsArticle(
             title: "India's GDP growth exceeds expectations in Q3 2024",
@@ -33,7 +33,7 @@ struct ContentView: View {
             ],
             author: "Rajesh Kumar",
             timeAgo: "2 hrs ago",
-            imageName: "logo"
+            imageName: "Heading"
         ),
         NewsArticle(
             title: "Tech giants announce major investments in Indian startups",
@@ -44,7 +44,7 @@ struct ContentView: View {
             ],
             author: "Priya Sharma",
             timeAgo: "4 hrs ago",
-            imageName: "logo"
+            imageName: "Heading"
         ),
         NewsArticle(
             title: "Stock markets reach new all-time highs amid positive sentiment",
@@ -55,7 +55,7 @@ struct ContentView: View {
             ],
             author: "Amit Patel",
             timeAgo: "6 hrs ago",
-            imageName: "logo"
+            imageName: "Heading"
         ),
         NewsArticle(
             title: "Renewable energy sector sees unprecedented growth",
@@ -66,62 +66,14 @@ struct ContentView: View {
             ],
             author: "Sunita Reddy",
             timeAgo: "8 hrs ago",
-            imageName: "logo"
+            imageName: "Heading"
         )
     ]
     
     var body: some View {
         VStack(spacing: 0) {
-            // Header Section
-            VStack(alignment: .leading, spacing: 0) {
-                HStack {
-                    Image("Menu")
-                        .resizable()
-                        .frame(width: 24, height: 24)
-
-                    Image("logo")
-                        .resizable()
-                        .frame(width: 167, height: 24)
-                    
-                    Spacer()
-                    
-                    Image("Search")
-                    Image("User")
-                }
-                .padding(16)
-                
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 20) {
-                        Image("Menu")
-                            .resizable()
-                            .frame(width: 24, height: 24)
-                        
-                        Text("BUSINESS")
-                        
-                        Image("Menu")
-                            .resizable()
-                            .frame(width: 24, height: 24)
-                        
-                        Text("TECH")
-                        
-                        Image("Menu")
-                            .resizable()
-                            .frame(width: 24, height: 24)
-                        
-                        Text("MARKETS")
-                        
-                        Image("Menu")
-                            .resizable()
-                            .frame(width: 24, height: 24)
-                        
-                        Text("REVIEWS")
-                    }
-                    .font(.system(size: 12))
-                    .fontWeight(.semibold)
-                    .padding(.horizontal, 16)
-                }
-            }
-            .background(.white)
+            // Header
+            HeaderView()
             
             // News Content Section
             ScrollView(showsIndicators: false) {
@@ -142,6 +94,9 @@ struct ContentView: View {
                 }
                 .padding(.vertical, 16)
             }
+            
+            // Footer
+            FooterView()
         }
         .background(.white)
         .sheet(isPresented: $showingSheet) {
